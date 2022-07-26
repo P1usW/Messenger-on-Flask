@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <table class="table table-hover">
+        <tr>
+            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
+            <td>
+                <h1>{{ _('User') }}: {{ user.username }}</h1>
+                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                {% if user.last_seen %}
+                <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
+                {% endif %}
+                <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
+                {% if user == current_user %}
+                <p><a href="{{ url_for('main.edit_profile') }}">{{ _('Edit your profile') }}</a></p>
+                {% if current_user.admin_mode %}
+                <p><a href="{{ url_for('admin.index') }}">{{ _('Admin Panel') }}</a></p>
+                {% endif %}
+                {% elif not current_user.is_following(user) %}
+                <p>
+                    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value=_('Follow'), class_='btn btn-default') }}
+                    </form>
+                </p>
+                {% else %}
+                <p>
+                    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
+                        {{ form.submit(value=_('Unfollow'), class_='btn btn-default') }}
+                    </form>
+                </p>
+                {% endif %}
+                {% if user != current_user %}
+                <p>
+                    <a href="{{ url_for('main.send_message',recipient=user.username) }}">{{ _('Send private message') }}</a>
+                </p>
+                {% endif %}
+
+            </td>
+        </tr>
+    </table>
+    <div class="pull-right">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {{ _('More') }}
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">{{ _('Archive') }}</a></li>
+            </ul>
+        </div>
+        <br>
+    </div>
+    <form action="{{ url_for('main.post_del')}}" method="post">
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+        <input class="btn btn-default" type="submit" value= "{{ _('Delete') }}">
+    </form>
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    {{ _('Older posts') }} <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+<div>
+	<h4>{{ _('Calendar Events (Demo)') }}</h4>
+</div>
+<div id="calendar"></div>
+<br>
+<table>
+	<td>
+		<a class="btn btn-default btn-lg" href="{{ url_for('main.calendar_new_event') }}">{{ _('Add event') }}</a>
+		<a class="btn btn-default btn-lg" href="#">{{ _('Delete event') }}</a>
+
+	</td>
+</table>
+<script>
+	let calendarEl = document.getElementById('calendar');
+
+	let calendar = new FullCalendar.Calendar(calendarEl, {
+    		events : [
+    			{% for event in current_user.events %}
+    			{
+    				title : '{{ event.body }}',
+    				start : '{{ event.date }}',
+    			},
+    			{% endfor %}
+    		],
+
+    		dayMaxEventRows: true, // for all non-TimeGrid views
+    		dayMaxEventRows: true,
+			  eventClick: function(info) {
+				alert('Event: ' + info.event.title);
+				alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+				alert('View: ' + info.view.type);
+
+				// change the border color just for fun
+				info.el.style.borderColor = 'red';
+			  }
+	});
+
+	calendar.render();
+</script>
+{% endblock %}
+
+

@@ -1,0 +1,44 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                <img src="{{ post.author.avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            {% set user_link %}
+                <span class="user_popup">
+                    <a href="{{ url_for('main.user', username=post.author.username) }}">
+                        {{ post.author.username }}
+                    </a>
+                </span>
+            {% endset %}
+            {{ _('%(username)s said %(when)s',
+                username=user_link, when=moment(post.timestamp).fromNow()) }}
+            {% if post.editing %}
+                {{ _('(changed)') }}
+            {% endif %}
+            <br>
+            <span id="post{{ post.id }}">{{ post.body }}</span>
+            {% if post.language and post.language != g.locale %}
+            <br><br>
+            <span id="translation{{ post.id }}">
+                <a href="javascript:translate(
+                            '#post{{ post.id }}',
+                            '#translation{{ post.id }}',
+                            '{{ g.locale }}');">{{ _('Translate') }}</a>
+            </span>
+            {% endif %}
+        </td>
+        {% if post.author.username == current_user.username %}
+        <td>
+            <div class="checkbox">
+                <div class="pull-right">
+                    <input type="checkbox" id="post check box" name="check" value="{{ post.id }}" aria-label="...">
+                    <a href="{{ url_for('main.edit_post', id=post.id) }}" type="button" class="btn btn-default btn-xs">{{ _('Editing') }}</a>
+                </div>
+            </div>
+        </td>
+        {% endif %}
+    </tr>
+</table>

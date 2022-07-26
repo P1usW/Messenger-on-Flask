@@ -1,0 +1,351 @@
+# German translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-07-26 00:41+0700\n"
+"PO-Revision-Date: 2022-06-28 16:11+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: app/__init__.py:23
+msgid "Please log in to access this page."
+msgstr ""
+
+#: app/auth/forms.py:8 app/auth/forms.py:15 app/main/forms.py:9
+msgid "Username"
+msgstr ""
+
+#: app/auth/forms.py:9 app/auth/forms.py:17 app/auth/forms.py:39
+msgid "Password"
+msgstr ""
+
+#: app/auth/forms.py:10
+msgid "Remember Me"
+msgstr ""
+
+#: app/auth/forms.py:11 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr ""
+
+#: app/auth/forms.py:16 app/auth/forms.py:34
+msgid "Email"
+msgstr ""
+
+#: app/auth/forms.py:18 app/auth/forms.py:41
+msgid "Repeat Password"
+msgstr ""
+
+#: app/auth/forms.py:19 app/templates/auth/register.html:5
+msgid "Register"
+msgstr ""
+
+#: app/auth/forms.py:25
+msgid "Please use a different username"
+msgstr ""
+
+#: app/auth/forms.py:30
+msgid "Please use a different email address."
+msgstr ""
+
+#: app/auth/forms.py:35 app/auth/forms.py:42
+msgid "Request Password Reset"
+msgstr ""
+
+#: app/auth/routes.py:21
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/auth/routes.py:39
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+
+#: app/auth/routes.py:55
+msgid "Your password has been reset."
+msgstr ""
+
+#: app/auth/routes.py:69
+msgid "Congratulations, you are now a registered user!"
+msgstr ""
+
+#: app/main/forms.py:10
+msgid "About me"
+msgstr ""
+
+#: app/main/forms.py:11 app/main/forms.py:26 app/main/forms.py:31
+#: app/main/forms.py:36 app/main/forms.py:49
+msgid "Submit"
+msgstr ""
+
+#: app/main/forms.py:21
+msgid "Please use a different username."
+msgstr ""
+
+#: app/main/forms.py:25
+msgid "Say something"
+msgstr ""
+
+#: app/main/forms.py:30
+msgid "Edit"
+msgstr ""
+
+#: app/main/forms.py:34
+msgid "New event"
+msgstr ""
+
+#: app/main/forms.py:35
+msgid "Date event"
+msgstr ""
+
+#: app/main/forms.py:40
+msgid "That day has already passed."
+msgstr ""
+
+#: app/main/forms.py:47
+msgid "Message"
+msgstr ""
+
+#: app/main/routes.py:34
+msgid "Your post is now live"
+msgstr ""
+
+#: app/main/routes.py:90
+msgid "Your changes have been saved."
+msgstr ""
+
+#: app/main/routes.py:127 app/main/routes.py:147
+#, python-format
+msgid "User %(username)s not found."
+msgstr ""
+
+#: app/main/routes.py:130
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: app/main/routes.py:134
+#, python-format
+msgid "You are following %(username)s!"
+msgstr ""
+
+#: app/main/routes.py:150
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
+#: app/main/routes.py:154
+#, python-format
+msgid "You are not following %(username)s!"
+msgstr ""
+
+#: app/main/routes.py:170
+#, python-format
+msgid "Post %(id)s is deleted"
+msgstr ""
+
+#: app/main/routes.py:172
+#, python-format
+msgid "Post %(id)s can not deleted"
+msgstr ""
+
+#: app/main/routes.py:204
+msgid "Your message has been sent."
+msgstr ""
+
+#: app/main/routes.py:206
+msgid "Send Message"
+msgstr ""
+
+#: app/templates/_post.html:16
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: app/templates/_post.html:19
+msgid "(changed)"
+msgstr ""
+
+#: app/templates/_post.html:29
+msgid "Translate"
+msgstr ""
+
+#: app/templates/_post.html:38
+msgid "Editing"
+msgstr ""
+
+#: app/templates/base.html:21
+msgid "Home"
+msgstr ""
+
+#: app/templates/base.html:22
+msgid "Explore"
+msgstr ""
+
+#: app/templates/base.html:23
+msgid "Calendar"
+msgstr ""
+
+#: app/templates/base.html:24
+msgid "News"
+msgstr ""
+
+#: app/templates/base.html:28
+msgid "Login"
+msgstr ""
+
+#: app/templates/base.html:31 app/templates/messages.html:4
+msgid "Messages"
+msgstr ""
+
+#: app/templates/base.html:41
+msgid "Profile"
+msgstr ""
+
+#: app/templates/base.html:42
+msgid "Logout"
+msgstr ""
+
+#: app/templates/base.html:79
+msgid "Error: Could not contact server."
+msgstr ""
+
+#: app/templates/calendar.html:7
+msgid "Calendar Events (Demo)"
+msgstr ""
+
+#: app/templates/calendar.html:13
+msgid "Add event"
+msgstr ""
+
+#: app/templates/calendar.html:14
+msgid "Delete event"
+msgstr ""
+
+#: app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr ""
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr ""
+
+#: app/templates/index.html:19 app/templates/user.html:67
+msgid "Newer posts"
+msgstr ""
+
+#: app/templates/index.html:24 app/templates/user.html:72
+msgid "Older posts"
+msgstr ""
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr ""
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr ""
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr ""
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:11 app/templates/user_popup.html:13
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user.html:13 app/templates/user_popup.html:15
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:13 app/templates/user_popup.html:16
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:15
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/admin/admin_index.html:5 app/templates/user.html:17
+msgid "Admin Panel"
+msgstr ""
+
+#: app/templates/user.html:23 app/templates/user_popup.html:20
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:30 app/templates/user_popup.html:24
+msgid "Unfollow"
+msgstr ""
+
+#: app/templates/user.html:36
+msgid "Send private message"
+msgstr ""
+
+#: app/templates/user.html:46
+msgid "More"
+msgstr ""
+
+#: app/templates/user.html:52
+msgid "Archive"
+msgstr ""
+
+#: app/templates/user.html:61
+msgid "Delete"
+msgstr ""
+
+#: app/templates/admin/admin_index.html:6
+msgid "Redirect to user profile"
+msgstr ""
+
+#: app/templates/auth/login.html:12
+msgid "New User?"
+msgstr ""
+
+#: app/templates/auth/login.html:12
+msgid "Click to Register!"
+msgstr ""
+
+#: app/templates/auth/login.html:14
+msgid "Forgot Your Password?"
+msgstr ""
+
+#: app/templates/auth/login.html:15
+msgid "Click to Reset It"
+msgstr ""
+
+#: app/templates/auth/reset_password.html:5
+msgid "Reset Your Password"
+msgstr ""
+
+#: app/templates/auth/reset_password_request.html:5
+msgid "Reset Password"
+msgstr ""
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr ""
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr ""
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr ""
+
